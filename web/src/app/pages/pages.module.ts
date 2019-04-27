@@ -1,17 +1,22 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
+import { ComponentModule } from '../shared/component/component.module';
+import { ModulesModule } from '../modules/modules.module';
 
 @NgModule({
   declarations: [
-    PagesComponent
+    PagesComponent,
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    ComponentModule,
+    ModulesModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports:[
     PagesComponent
   ]

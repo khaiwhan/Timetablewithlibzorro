@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -11,5 +11,12 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
   }
+  isCollapsed = false;
+  triggerTemplate: TemplateRef<void> | null = null;
+  @ViewChild('trigger') customTrigger: TemplateRef<void>;
 
+  /** custom trigger can be TemplateRef **/
+  changeTrigger(): void {
+    this.triggerTemplate = this.customTrigger;
+  }
 }
