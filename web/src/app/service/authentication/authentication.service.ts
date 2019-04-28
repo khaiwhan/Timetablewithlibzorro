@@ -7,7 +7,7 @@ import { ipServer } from '../../url/url';
 export class AuthenticationService {
 
   constructor(private http:HttpClient) { }
-  public login(data){
+  login(data){
     return this.http.post(ipServer + 'login',data)
   }
 }

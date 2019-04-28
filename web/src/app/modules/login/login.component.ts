@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
+import { SessionService } from 'src/app/service/session/session.service';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,15 @@ export class LoginComponent implements OnInit {
 
   validateForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private service:AuthenticationService,
+    private session:SessionService
+    ) { }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      userName: [null, [Validators.required]],
+      username: [null, [Validators.required]],
       password: [null, [Validators.required]],
       remember: [true]
     });
@@ -25,7 +31,10 @@ export class LoginComponent implements OnInit {
       this.validateForm.controls[i].markAsDirty(); //message
       this.validateForm.controls[i].updateValueAndValidity();//box red
     }
-    console.log(this.validateForm.value);
-    
+    this.service.login(this.validateForm.value).subscribe(
+      (res)=>{
+        this.session.setActiveUser(res);
+      }
+    )
   }
 }
