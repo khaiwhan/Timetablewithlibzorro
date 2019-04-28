@@ -54,3 +54,8 @@
 .column-15{
     flex: 15;
 }
+@media only screen and (max-width:800px){
+    .row{
+        flex-direction: column;
+    }
+}
