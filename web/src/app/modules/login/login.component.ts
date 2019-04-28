@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 import { SessionService } from 'src/app/service/session/session.service';
+import { NzModalService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private service:AuthenticationService,
-    private session:SessionService
+    private session:SessionService,
+    private modal:NzModalService
     ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,10 @@ export class LoginComponent implements OnInit {
     }
     this.service.login(this.validateForm.value).subscribe(
       (res)=>{
+        const modal = this.modal.success({
+          nzTitle:'Login Success!!!'
+        })
+        setTimeout(()=> modal.destroy(),2000)
         this.session.setActiveUser(res);
       }
     )
