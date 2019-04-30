@@ -25,3 +25,20 @@ main{
 .deleteborder{
   border: 0px;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #d4d4d4;
+  border-radius: 20px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00b294;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #01856f;
+}
