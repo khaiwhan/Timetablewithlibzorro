@@ -11,7 +11,7 @@ export class SessionService {
     this.session.store('ACTIVE_USER',data)
   }
   public getActiveUser(){
-    this.session.retrieve('ACTIVE_USER')
+    return this.session.retrieve('ACTIVE_USER')
   }
   public clearActiveUser(){
     this.session.clear('ACTIVE_USER')

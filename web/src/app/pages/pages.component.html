@@ -1,1 +1,58 @@
-<app-login></app-login>
+<app-login *ngIf="STATUS_LOGIN"></app-login>
+<header *ngIf="!STATUS_LOGIN">
+    <nz-header style="background: #fff; padding:0;">
+        <i class="trigger" nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"></i>
+    </nz-header>
+    <!-- <app-nav></app-nav> -->
+</header>
+<main *ngIf="!STATUS_LOGIN">
+    <nz-layout style="height: 100%">
+        <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+            <ul nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed" class="deleteborder">
+                <li nz-menu-item>
+                    <span><i nz-icon type="dashboard"></i><span class="nav-text">Dashboard</span></span>
+                </li>
+                <li nz-menu-item>
+                    <span><i nz-icon type="read"></i><span class="nav-text">Identified Subject each Term</span></span>
+                </li>
+                <li nz-menu-item>
+                    <span><i nz-icon type="reconciliation"></i><span class="nav-text">Identified Teacher each Subject</span></span>
+                </li>
+                <li nz-menu-item>
+                    <span><i nz-icon type="hourglass"></i><span class="nav-text">Identified Inconvenient Time of Teacher</span></span>
+                </li>
+                <li nz-menu-item>
+                    <span><i nz-icon type="schedule"></i><span class="nav-text">Identified Timetable</span></span>
+                </li>
+                <li nz-submenu>
+                    <span title><i nz-icon type="crown"></i><span class="nav-text">Master Data</span></span>
+                    <ul>
+                        <li nz-menu-item>User Management</li>
+                        <li nz-menu-item>Group Management</li>
+                        <li nz-menu-item>Course</li>
+                        <li nz-menu-item>Subject Management</li>
+                        <li nz-menu-item>Room Management</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+                    <span title><i nz-icon type="usb"></i><span class="nav-text">Export File</span></span>
+                    <ul>
+                        <li nz-menu-item>Export Timetable of Student</li>
+                        <li nz-menu-item>Export Timetable of Teacher</li>
+                        <li nz-menu-item>Export Subject Current Term</li>
+                    </ul>
+                </li>
+            </ul>
+        </nz-sider>
+        <nz-layout>
+            <nz-content style="margin:0 16px;">
+
+            </nz-content>
+            <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer>
+        </nz-layout>
+    </nz-layout>
+    <ng-template #trigger>
+        <i nz-icon type="up"></i>
+    </ng-template>
+</main>

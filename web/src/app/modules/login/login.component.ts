@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
         })
         setTimeout(()=> modal.destroy(),2000)
         this.session.setActiveUser(res);
+        window.history.go(0)
       }
     )
   }
