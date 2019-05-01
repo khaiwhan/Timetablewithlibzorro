@@ -8,7 +8,8 @@ import { UserManagementService } from 'src/app/service/user-management/user-mana
 })
 export class UserManagementComponent implements OnInit {
   userData;
-  constructor(private service:UserManagementService) { }
+  isVisible = false;
+  constructor(private service: UserManagementService) { }
 
   ngOnInit() {
     this.service.getData().subscribe(
@@ -16,6 +17,20 @@ export class UserManagementComponent implements OnInit {
         this.userData = res;
       }
     )
+  }
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
   }
 
 }
