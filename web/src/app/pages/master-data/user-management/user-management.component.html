@@ -1,3 +1,25 @@
-<p>
-  user-management works!
-</p>
+<div style="padding-right: 20px;">
+  <h1>User Management</h1>
+  <nz-table #userTable [nzData]="userData">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of userTable.data">
+        <td>{{list.USERNAME}}</td>
+        <td>{{list.PASSWORD}}</td>
+        <td>{{list.FIRSTNAME}}</td>
+        <td>{{list.LASTNAME}}</td>
+        <td>{{list.STATUS}}</td>
+        <td><Button>Edit</Button></td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

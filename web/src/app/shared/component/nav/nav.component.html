@@ -4,12 +4,12 @@
   </div>
   <div class="menu-profile">
     <nz-dropdown [nzTrigger]="'click'">
-      <a nz-dropdown style="line-height: 60px;padding-right: 18px;font-size: 18px;">Welcome&nbsp;{{user.FIRSTNAME}}&nbsp;&nbsp;{{user.LASTNAME}}<i nz-icon type="caret-down"></i> </a>
+      <a nz-dropdown style="line-height: 60px;padding:0 10px;font-size: 14px;">Welcome&nbsp;{{user.FIRSTNAME}}&nbsp;&nbsp;{{user.LASTNAME}}</a>
       <ul nz-menu>
         <li nz-menu-item>My Profile</li>
         <li nz-menu-item>Edit Profile</li>
         <li nz-menu-item>Change Password</li>
-        <li nz-menu-item>Logout</li>
+        <li nz-menu-item (click)="logout()">Logout</li>
       </ul>
     </nz-dropdown>
   </div>

@@ -21,4 +21,10 @@ export class NavComponent implements OnInit {
   changeTrigger(): void {
     this.triggerTemplate = this.customTrigger;
   }
+
+
+  logout(){
+    this.session.clearActiveUser();
+    window.history.go(0);
+  }
 }
