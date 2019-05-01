@@ -1,6 +1,6 @@
 var connectdatabase = require('../../connectdatabase/connect');
 var getdatauser = {
-    getdatauser:(callback)=>{
+    getdatauser:(data,callback)=>{
         let cmd = `SELECT * FROM USERS`;
         return connectdatabase.query(cmd,callback);
     }
