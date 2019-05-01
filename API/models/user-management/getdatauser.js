@@ -1,7 +1,7 @@
 var connectdatabase = require('../../connectdatabase/connect');
 var getdatauser = {
     getdatauser:(callback)=>{
-        let cmd = `SELECT * FROM USERS'`;
+        let cmd = `SELECT * FROM USERS`;
         return connectdatabase.query(cmd,callback);
     }
 }
