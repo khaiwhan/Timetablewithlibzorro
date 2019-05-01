@@ -1,4 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { SessionService } from 'src/app/service/session/session.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,10 +7,11 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
-  constructor() { }
+  user;
+  constructor(private session:SessionService) { }
 
   ngOnInit() {
+    this.user = this.session.getActiveUser();
   }
   isCollapsed = false;
   triggerTemplate: TemplateRef<void> | null = null;

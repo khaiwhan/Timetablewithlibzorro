@@ -2,7 +2,15 @@
   <div class="flex-item">
     <p>Timetable</p>
   </div>
-  <div class="flex-item text-right">
-    <p>Welcome</p>
+  <div class="menu-profile">
+    <nz-dropdown [nzTrigger]="'click'">
+      <a nz-dropdown style="line-height: 60px;padding-right: 18px;font-size: 18px;">Welcome&nbsp;{{user.FIRSTNAME}}&nbsp;&nbsp;{{user.LASTNAME}}<i nz-icon type="caret-down"></i> </a>
+      <ul nz-menu>
+        <li nz-menu-item>My Profile</li>
+        <li nz-menu-item>Edit Profile</li>
+        <li nz-menu-item>Change Password</li>
+        <li nz-menu-item>Logout</li>
+      </ul>
+    </nz-dropdown>
   </div>
 </div>

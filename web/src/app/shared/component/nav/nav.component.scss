@@ -25,6 +25,12 @@
 .text-right{
   text-align: right;
 }
+.menu-profile{
+  transition: .5s;
+}
+.menu-profile:hover{
+  background-color: rgba(0, 0, 0, 0.06)
+}
 p{
   text-transform:uppercase;
   font-weight:700;
