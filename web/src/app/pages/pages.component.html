@@ -1,12 +1,13 @@
 <app-login *ngIf="STATUS_LOGIN"></app-login>
-<header *ngIf="!STATUS_LOGIN" style="align-items: center">
-    <nz-header style="background: #fff; padding:0;">
+<app-section *ngIf="!STATUS_LOGIN && STATUS_SECTION"></app-section>
+<header *ngIf="!STATUS_LOGIN && !STATUS_SECTION" style="align-items: center">
+    <nz-header style="background: #00b294; padding:0;">
         <i class="trigger" nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             (click)="isCollapsed = !isCollapsed"></i>
     </nz-header>
     <app-nav style="width:100%"></app-nav>
 </header>
-<main *ngIf="!STATUS_LOGIN" style="overflow-y: auto">
+<main *ngIf="!STATUS_LOGIN && !STATUS_SECTION" style="overflow-y: auto">
     <nz-layout style="height: 100%">
         <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate" style="overflow-y: auto">
             <ul nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed" class="deleteborder">

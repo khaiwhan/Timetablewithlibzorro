@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row" style="height: 100vh;">
+    <div class="column-3"></div>
+    <div class="column" style="margin: auto">
+      <form (ngSubmit)="setSection()">
+        <p>SELECT FACULTY AND DEPARTMENT</p>
+        <div>
+          <nz-select style="width: 200px;" nzShowSearch nzAllowClear nzPlaceHolder="Select a Faculty" (nzOpenChange)="setDepartment()" [formControl] = "FacultyForm" [(ngModel)]="FacultyValue">
+            <nz-option *ngFor="let list of Facultys" nzLabel="{{list.FACULTY_NAME}}" nzValue="{{list.FACULTY_ID}}"></nz-option>
+          </nz-select>
+        </div>
+        <br>
+        <div>
+          <nz-select style="width: 200px;" nzShowSearch nzAllowClear nzPlaceHolder="Select a Department" [formControl] = "DepartmentForm" [(ngModel)]="DepartmentValue">
+            <nz-option *ngFor="let list of Departments" nzLabel="{{list.DEPARTMENT_NAME}}" nzValue="{{list.DEPARTMENT_ID}}"></nz-option>
+          </nz-select>
+        </div>
+        <br>
+        <button nz-button nzType="primary">OK</button>
+      </form>
+    </div>
+    <div class="column-3"></div>
+  </div>
+</div>

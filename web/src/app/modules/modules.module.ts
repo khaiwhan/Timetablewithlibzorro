@@ -5,9 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ZorroModule } from '../shared/lib/zorro-module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { HttpClientModule } from '@angular/common/http';
+import { SectionComponent } from './section/section.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, SectionComponent],
   imports: [
     CommonModule,
     NgZorroAntdModule,
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   exports:[
-    LoginComponent
+    LoginComponent,
+    SectionComponent
   ]
 })
 export class ModulesModule { }

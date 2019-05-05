@@ -10,4 +10,13 @@ export class AuthenticationService {
   login(data){
     return this.http.post(ipServer + 'login',data)
   }
+  section(data){
+    return this.http.get(ipServer + 'section/' + data)
+  }
+  getFaculty(){
+    return this.http.get(ipServer + 'getfaculty')
+  }
+  getDepartment(data){
+    return this.http.get(ipServer + 'getdepartment/' + data)
+  }
 }
