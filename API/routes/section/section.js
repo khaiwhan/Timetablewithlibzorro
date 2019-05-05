@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var menus = require('../../models/menu/menu');
+var section = require('../../models/section/section');
 
-router.get('/:status',(req,res)=>{
-    let data = req.params.status;
-    menus.menus(data,(err,row)=>{
+router.get('/:department_id',(req,res)=>{
+    let data = req.params.department_id;
+    section.section(data,(err,row)=>{
         if(err){
             res.json(err)
         }

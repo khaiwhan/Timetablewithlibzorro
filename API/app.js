@@ -11,6 +11,9 @@ var usersRouter = require('./routes/users');
 //route
 var login = require('./routes/login/login');
 var menus = require('./routes/menu/menu');
+var faculty = require('./routes/faculty/faculty');
+var department = require('./routes/department/department');
+var section = require('./routes/section/section');
 //#region user-management
 var getdatauser = require('./routes/user-management/getdatauser');
 //#endregion user-management
@@ -32,6 +35,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/login',login);
 app.use('/getmenus',menus);
+app.use('/getfaculty',faculty);
+app.use('/getdepartment',department);
+app.use('/section',section);
 //#region user-management
 app.use('/getdatauser',getdatauser);
 //#endregion user-management

@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var menus = require('../../models/menu/menu');
+var faculty = require('../../models/faculty/faculty');
 
-router.get('/:status',(req,res)=>{
-    let data = req.params.status;
-    menus.menus(data,(err,row)=>{
+router.get('/',(req,res)=>{
+    let data = req.params;
+    faculty.faculty(data,(err,row)=>{
         if(err){
             res.json(err)
         }
