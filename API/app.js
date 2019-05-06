@@ -17,6 +17,10 @@ var section = require('./routes/section/section');
 //#region user-management
 var getdatauser = require('./routes/user-management/getdatauser');
 //#endregion user-management
+//#region Dashboard
+var dashboardGetUser = require('./routes/dashboard-getuser/getuser');
+var dashboardGetSection = require('./routes/dashboard-getuser/getsection');
+//#endregion Dashboard
 var app = express();
 
 // view engine setup
@@ -41,6 +45,10 @@ app.use('/section',section);
 //#region user-management
 app.use('/getdatauser',getdatauser);
 //#endregion user-management
+//#region Dashboard
+app.use('/dashboardgetuser',dashboardGetUser);
+app.use('/dashboardgetsection',dashboardGetSection);
+//#endregion Dashboard
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

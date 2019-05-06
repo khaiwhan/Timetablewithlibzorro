@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { SessionService } from 'src/app/service/session/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -8,7 +9,7 @@ import { SessionService } from 'src/app/service/session/session.service';
 })
 export class NavComponent implements OnInit {
   user;
-  constructor(private session:SessionService) { }
+  constructor(private session:SessionService,private route:Router) { }
 
   ngOnInit() {
     this.user = this.session.getActiveUser();
@@ -25,6 +26,6 @@ export class NavComponent implements OnInit {
 
   logout(){
     this.session.clearActiveUser();
-    window.history.go(0);
+    this.route.navigate([''])
   }
 }

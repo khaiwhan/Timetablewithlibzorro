@@ -1,0 +1,56 @@
+<header style="align-items: center">
+  <nz-header style="background: #00b294; padding:0;">
+      <i class="trigger" nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          (click)="isCollapsed = !isCollapsed"></i>
+  </nz-header>
+  <app-nav style="width:100%"></app-nav>
+</header>
+<main style="overflow-y: auto">
+  <nz-layout style="height: 100%">
+      <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate" style="overflow-y: auto;overflow-x:hidden">
+          <ul nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed" class="deleteborder">
+              <li nz-menu-item routerLink="dashboard">
+                  <span><i nz-icon type="dashboard"></i><span class="nav-text">Dashboard</span></span>
+              </li>
+              <li nz-menu-item routerLink="identified-subject-each-term">
+                  <span><i nz-icon type="read"></i><span class="nav-text">Identified Subject each Term</span></span>
+              </li>
+              <li nz-menu-item routerLink="identified-teacher-each-subject">
+                  <span><i nz-icon type="reconciliation"></i><span class="nav-text">Identified Teacher each Subject</span></span>
+              </li>
+              <li nz-menu-item routerLink="identified-inconvenient-time-of-teacher">
+                  <span><i nz-icon type="hourglass"></i><span class="nav-text">Identified Inconvenient Time of Teacher</span></span>
+              </li>
+              <li nz-menu-item routerLink="identified-timetable">
+                  <span><i nz-icon type="schedule"></i><span class="nav-text">Identified Timetable</span></span>
+              </li>
+              <li nz-submenu>
+                  <span title><i nz-icon type="crown"></i><span class="nav-text">Master Data</span></span>
+                  <ul>
+                      <li nz-menu-item routerLink="master-data/user-management">User Management</li>
+                      <li nz-menu-item routerLink="master-data/group-management">Group Management</li>
+                      <li nz-menu-item routerLink="master-data/course">Course</li>
+                      <li nz-menu-item routerLink="master-data/subject-management">Subject Management</li>
+                      <li nz-menu-item routerLink="master-data/room-management">Room Management</li>
+                  </ul>
+              </li>
+              <li nz-submenu>
+                  <span title><i nz-icon type="usb"></i><span class="nav-text">Export File</span></span>
+                  <ul>
+                      <li nz-menu-item routerLink="export-file/export-timetable-of-student">Export Timetable of Student</li>
+                      <li nz-menu-item routerLink="export-file/export-timetable-of-teacher">Export Timetable of Teacher</li>
+                      <li nz-menu-item routerLink="export-file/export-subject-current-term">Export Subject Current Term</li>
+                  </ul>
+              </li>
+          </ul>
+      </nz-sider>
+      <nz-layout style="background-color: white">
+          <nz-content style="margin:10px 0px 10px 20px;padding-right: 20px">
+              <router-outlet></router-outlet>
+          </nz-content>
+      </nz-layout>
+  </nz-layout>
+  <ng-template #trigger>
+      <i nz-icon type="up"></i>
+  </ng-template>
+</main>

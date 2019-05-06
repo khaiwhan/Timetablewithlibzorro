@@ -16,9 +16,7 @@ export class PagesComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.USER = this.session.getActiveUser();
-    this.USER == null ? this.STATUS_LOGIN = true : this.STATUS_LOGIN = false
-    this.USER.DEPARTMENT == null ? this.STATUS_SECTION = true : this.STATUS_SECTION = false
+    
   }
 
 }

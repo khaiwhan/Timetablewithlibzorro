@@ -1,6 +1,7 @@
-<app-login *ngIf="STATUS_LOGIN"></app-login>
-<app-section *ngIf="!STATUS_LOGIN && STATUS_SECTION"></app-section>
-<header *ngIf="!STATUS_LOGIN && !STATUS_SECTION" style="align-items: center">
+<router-outlet></router-outlet>
+<!-- <app-login *ngIf="STATUS_LOGIN"></app-login>
+<app-section *ngIf="!STATUS_LOGIN && STATUS_SECTION"></app-section> -->
+<!-- <header *ngIf="!STATUS_LOGIN && !STATUS_SECTION" style="align-items: center">
     <nz-header style="background: #00b294; padding:0;">
         <i class="trigger" nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             (click)="isCollapsed = !isCollapsed"></i>
@@ -55,4 +56,4 @@
     <ng-template #trigger>
         <i nz-icon type="up"></i>
     </ng-template>
-</main>
+</main> -->
