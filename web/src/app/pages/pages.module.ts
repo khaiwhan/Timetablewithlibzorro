@@ -21,6 +21,7 @@ import { ExportFileComponent } from './export-file/export-file.component';
 import { ExportTimetableOfStudentComponent } from './export-file/export-timetable-of-student/export-timetable-of-student.component';
 import { ExportTimetableOfTeacherComponent } from './export-file/export-timetable-of-teacher/export-timetable-of-teacher.component';
 import { ExportSubjectCurrentTermComponent } from './export-file/export-subject-current-term/export-subject-current-term.component';
+import { Bootstarpmodule } from '../shared/lib/bootstarp-module';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ExportSubjectCurrentTermComponent } from './export-file/export-subject-
     PagesRoutingModule,
     ComponentModule,
     ModulesModule,
-    ZorroModule
+    ZorroModule,
+    Bootstarpmodule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports:[
